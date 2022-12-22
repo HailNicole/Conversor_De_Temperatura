@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Conversor</class>
+ <widget class="QDialog" name="Conversor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>411</width>
+    <height>309</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Conversor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="recursos.qrc">
+    <normaloff>:/recursos/temperatura-alta.png</normaloff>:/recursos/temperatura-alta.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>29</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Centígrados</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLCDNumber" name="outCent">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(252, 233, 79);</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="inCent">
+           <property name="minimum">
+            <number>-18</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="title">
+         <string>Fahrenheit</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLCDNumber" name="outFahr">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(252, 175, 62);</string>
+           </property>
+           <property name="intValue" stdset="0">
+            <number>32</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="inFahr">
+           <property name="maximum">
+            <number>210</number>
+           </property>
+           <property name="value">
+            <number>32</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="title">
+         <string>Kelvin</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLCDNumber" name="outkelv">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(143, 240, 164);</string>
+           </property>
+           <property name="value" stdset="0">
+            <double>273.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="inkelv">
+           <property name="minimum">
+            <number>255</number>
+           </property>
+           <property name="maximum">
+            <number>372</number>
+           </property>
+           <property name="value">
+            <number>273</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>&lt;a href=&quot;https://www.flaticon.es/iconos-gratis/temperatura&quot; title=&quot;temperatura iconos&quot;&gt;Temperatura iconos creados por IconBaandar - Flaticon&lt;/a&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>inCent</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outCent</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>182</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>78</x>
+     <y>70</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inFahr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outFahr</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>222</x>
+     <y>182</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>222</x>
+     <y>70</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inkelv</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outkelv</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>314</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>314</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
